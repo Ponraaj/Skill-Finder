@@ -13,13 +13,14 @@ const SignupPage = () => {
  
 
   return (
+    <div className="container">
     <div className="signup-container">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2>Sign Up</h2>
+        <h2 className='text-3xl text-center'>Sign Up</h2>
         <form>
           <div className="form-group">
             <label>Username</label>
@@ -69,6 +70,7 @@ const SignupPage = () => {
           Already have an account? <Link to="/">Login</Link>
         </p>
       </motion.div>
+    </div>
     </div>
   );
 };

@@ -2,15 +2,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import Navebar from './components/Navbar'
+import './App.css'
 
 const App = () => {
   return (
+    
     <Router>
-      <Routes>
+      <div className='App'>
         <Navebar />
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<LoginPage/>} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
+      </div>
+      
     </Router>
   );
 };

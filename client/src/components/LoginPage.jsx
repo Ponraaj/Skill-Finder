@@ -5,6 +5,7 @@ import './LoginPage.css';
 
 const LoginPage = () => {
   return (
+  <div className="container">
     <div className="login-container">
       <div className="h-full w-full bg-white-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-50 border border-gray-100"></div>
       <motion.div
@@ -12,7 +13,7 @@ const LoginPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2>Login</h2>
+        <h2 className='text-3xl text-center'>Login</h2>
         <form>
           <div className="form-group">
             <label>Email</label>
@@ -33,6 +34,7 @@ const LoginPage = () => {
         <p>Dont have an account? <Link to="/signup">Sign up</Link>
         </p>
       </motion.div>
+      </div>
       </div>
   );
 };
