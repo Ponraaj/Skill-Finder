@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAuth } from '../lib/context/AuthContext'
 
 const naveLinks=document.querySelector('.nav-links')
 function onToggle(e){
@@ -7,6 +8,8 @@ function onToggle(e){
 }
 
 function Navbar(){
+
+    const {user,signOut} = useAuth()
     return(
         <div className='bg-white p-2 m-3'>
             <nav className='flex justify-between items-center w-[100%] mx-auto'>
@@ -26,8 +29,12 @@ function Navbar(){
                     </ul>
                 </div>
                 <div className='flex item-center gap-3'>
-                    <a href="/signup" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Sign Up</a>
-                    <a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Login</a>
+                    {
+                        !user?<>
+                        <a href="/signup" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Sign Up</a>
+                        <a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Login</a>
+                        </>:<a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Logout</a>
+                    }
                     {/* <button className='text-xs bg-[#a6c1ee] text-white px-2 py-1 rounded-full hover:bg-[#87acec]'>Sign in</button> */}
                     <div className='text-base cursor-pointer md:hidden py-0.5'>
                         <ion-icon onClick={onToggle} name="menu-outline"></ion-icon>

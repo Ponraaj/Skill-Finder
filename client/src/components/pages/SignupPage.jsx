@@ -1,14 +1,47 @@
 import React, { useState } from 'react';
 import { Link} from 'react-router-dom';
+import supabase from '../../lib/helpers/supabase';
 import { motion } from 'framer-motion';
-import './SignupPage.css';
+import '../SignupPage.css';
 
 const SignupPage = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
- 
+  const [credentials,setCredentials] = useState({
+    username:"",
+    email:"",
+    password:"",
+    confirmPassword:""
+  })
+
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    try {
+      const {data,error} = await supabase.auth.signUp(
+        {
+          email:credentials.email,
+          password:credentials.password,
+          options:{
+            data:{
+              username:credentials.username
+            }
+          }
+        }
+      )
+      console.log(data)
+      alert("Check your email for verification Link!")
+      if(error) throw error
+    } catch (error) {
+      alert(error.message)
+    }
+  }
+
+  const handleChange=(e)=>{
+    setCredentials((prev)=>{
+      return {
+        ...prev,
+        [e.target.name]:e.target.value
+      }
+    })
+  }
 
  
 
@@ -21,13 +54,14 @@ const SignupPage = () => {
         transition={{ duration: 0.5 }}
       >
         <h2 className='text-3xl text-center'>Sign Up</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Username</label>
             <input
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              name='username'
+              value={credentials.username}
+              onChange={handleChange}
               required
             />
           </div>
@@ -35,8 +69,9 @@ const SignupPage = () => {
             <label>Email</label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name='email'
+              value={credentials.email}
+              onChange={handleChange}
               required
             />
           </div>
@@ -44,8 +79,9 @@ const SignupPage = () => {
             <label>Password</label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name='password'
+              value={credentials.password}
+              onChange={handleChange}
               required
             />
           </div>
@@ -53,8 +89,9 @@ const SignupPage = () => {
             <label>Confirm Password</label>
             <input
               type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              name='confirmPassword'
+              value={credentials.confirmPassword}
+              onChange={handleChange}
               required
             />
           </div>
