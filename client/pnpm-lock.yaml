@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@chatscope/chat-ui-kit-react':
+        specifier: ^2.0.3
+        version: 2.0.3(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@chatscope/chat-ui-kit-styles':
+        specifier: ^1.4.0
+        version: 1.4.0
       '@supabase/supabase-js':
         specifier: ^2.44.4
         version: 2.44.4
@@ -177,6 +183,16 @@ packages:
     resolution: {integrity: sha512-xm8XrMKz0IlUdocVbYJe0Z9xEgidU7msskG8BbhnTPK/HZ2z/7FP7ykqPgrUH+C+r414mNfNWam1f2vqOjqjYQ==}
     engines: {node: '>=6.9.0'}
 
+  '@chatscope/chat-ui-kit-react@2.0.3':
+    resolution: {integrity: sha512-0IkjFskRec7SHrFivOQPiZMie5GLQL+ZnROiIbj4yptbC3aMEMFdHRAZrfqlid3uQx9kYhdtn34wMLh1vVNMLA==}
+    peerDependencies:
+      prop-types: ^15.7.2
+      react: ^16.12.0 || ^17.0.0 || ^18.2.0
+      react-dom: ^16.12.0 || ^17.0.0 || ^18.2.0
+
+  '@chatscope/chat-ui-kit-styles@1.4.0':
+    resolution: {integrity: sha512-016mBJD3DESw7Nh+lkKcPd22xG92ghA0VpIXIbjQtmXhC7Ve6wRazTy8z1Ahut+Tbv179+JxrftuMngsj/yV8Q==}
+
   '@esbuild/aix-ppc64@0.21.5':
     resolution: {integrity: sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ==}
     engines: {node: '>=12'}
@@ -332,6 +348,28 @@ packages:
   '@eslint/js@8.57.0':
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+
+  '@fortawesome/fontawesome-common-types@0.2.36':
+    resolution: {integrity: sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/fontawesome-free@5.15.4':
+    resolution: {integrity: sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/fontawesome-svg-core@1.2.36':
+    resolution: {integrity: sha512-YUcsLQKYb6DmaJjIHdDWpBIGCcyE/W+p/LMGvjQem55Mm2XWVAP5kWTMKWLv9lwpCVjpLxPyOMOyUocP1GxrtA==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/free-solid-svg-icons@5.15.4':
+    resolution: {integrity: sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==}
+    engines: {node: '>=6'}
+
+  '@fortawesome/react-fontawesome@0.1.19':
+    resolution: {integrity: sha512-Hyb+lB8T18cvLNX0S3llz7PcSOAJMLwiVKBuuzwM/nI5uoBw+gQjnf9il0fR1C3DKOI5Kc79pkJ4/xB0Uw9aFQ==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      react: '>=16.x'
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -676,6 +714,9 @@ packages:
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
+
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
 
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -1952,6 +1993,20 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
+  '@chatscope/chat-ui-kit-react@2.0.3(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@chatscope/chat-ui-kit-styles': 1.4.0
+      '@fortawesome/fontawesome-free': 5.15.4
+      '@fortawesome/fontawesome-svg-core': 1.2.36
+      '@fortawesome/free-solid-svg-icons': 5.15.4
+      '@fortawesome/react-fontawesome': 0.1.19(@fortawesome/fontawesome-svg-core@1.2.36)(react@18.3.1)
+      classnames: 2.5.1
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@chatscope/chat-ui-kit-styles@1.4.0': {}
+
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
 
@@ -2043,6 +2098,24 @@ snapshots:
       - supports-color
 
   '@eslint/js@8.57.0': {}
+
+  '@fortawesome/fontawesome-common-types@0.2.36': {}
+
+  '@fortawesome/fontawesome-free@5.15.4': {}
+
+  '@fortawesome/fontawesome-svg-core@1.2.36':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.36
+
+  '@fortawesome/free-solid-svg-icons@5.15.4':
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 0.2.36
+
+  '@fortawesome/react-fontawesome@0.1.19(@fortawesome/fontawesome-svg-core@1.2.36)(react@18.3.1)':
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 1.2.36
+      prop-types: 15.8.1
+      react: 18.3.1
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -2426,6 +2499,8 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  classnames@2.5.1: {}
 
   color-convert@1.9.3:
     dependencies:
