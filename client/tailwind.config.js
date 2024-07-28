@@ -6,6 +6,7 @@ export default {
       sans:["Montserrat","sans-serif"]
     },
     extend: {},
+
   },
   plugins: [],
 }
