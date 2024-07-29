@@ -33,7 +33,7 @@ function Navbar(){
                         !user?<>
                         <a href="/signup" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Sign Up</a>
                         <a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Login</a>
-                        </>:<a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Logout</a>
+                        </>:<a href="/login" onClick={signOut} className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Logout</a>
                     }
                     {/* <button className='text-xs bg-[#a6c1ee] text-white px-2 py-1 rounded-full hover:bg-[#87acec]'>Sign in</button> */}
                     <div className='text-base cursor-pointer md:hidden py-0.5'>
