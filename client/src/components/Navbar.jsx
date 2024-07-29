@@ -1,14 +1,13 @@
 import React from 'react'
 import { useAuth } from '../lib/context/AuthContext'
 
-const naveLinks=document.querySelector('.nav-links')
 function onToggle(e){
-    e.target.name=e.target.name==='menu-outline' ? 'close-outline' : 'menu-outline'
+    const naveLinks=document.querySelector('.nav-links')
+    e.target.name= (e.target.name==='menu-outline') ? 'close-outline' : 'menu-outline'
     naveLinks.classList.toggle('top-[6.5%]')
 }
 
 function Navbar(){
-
     const {user,signOut} = useAuth()
     return(
         <div className='bg-white p-2 m-3 shadow-md'>
