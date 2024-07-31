@@ -3,14 +3,12 @@
 
 ## Overview
 
-This educational app which is ** Skill-Finder** provides a seamless learning experience with features including user authentication via Supabase, containerization with Docker, and AI-powered functionalities through the Gemini API. Built using the MERN stack (Supabase, Express, React, Node.js), the app features a responsive UI with Tailwind CSS, and robust educational content management.
+This educational app which is  Skill-Finder provides a seamless learning experience with features including user authentication via Supabase, and AI-powered functionalities through the Gemini API. Built using the MERN stack (Supabase, Express, React, Node.js), the app features a responsive UI with Tailwind CSS, and robust educational content management.
 
 ## Features
 
  User authentication with Supabase
- 
- Containerization with Docker
- 
+  
  AI-powered functionalities with Gemini API
  
  Responsive UI using Material UI and Tailwind CSS
