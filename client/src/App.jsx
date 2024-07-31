@@ -7,6 +7,7 @@ import Home from './components/pages/Home';
 import { AuthProvider } from './lib/context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import ContactPage from './components/pages/ContactPage';
+import LandingPage from './components/pages/LandingPage';
 
 const App = () => {
   return (
@@ -16,7 +17,7 @@ const App = () => {
         <div className='App'>
           <Navebar />
           <Routes>
-            <Route path="/" element={<LoginPage/>} />
+            <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/home" element={
@@ -25,6 +26,7 @@ const App = () => {
             </ProtectedRoute>} />
 
             <Route path='/contact' element={<ContactPage/>}/>
+            
 
           </Routes>
         </div>
