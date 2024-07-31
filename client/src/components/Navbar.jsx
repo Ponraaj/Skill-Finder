@@ -10,7 +10,7 @@ function onToggle(e){
 function Navbar(){
     const {user,signOut} = useAuth()
     return(
-        <div className='bg-white p-2 m-3 shadow-md'>
+        <div className='bg-white p-6 m-3 shadow-md'>
             <nav className='flex justify-between items-center w-[100%] mx-auto'>
                 <div className='flex gap-1'>
                     <div className='py-[2.5%] text-sky-500'>
@@ -23,16 +23,16 @@ function Navbar(){
                 </div>
                 <div className='nav-links md:static absolute md:min-h-fit min-h-[11.8vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 pb-10 md:pb-0 duration-500 z-10'>
                     <ul className='flex md:flex-row flex-col bg-white text-xs md:items-center md:gap-[4vw] gap-5 flex-wrap w-full'>
-                        <li><a href="/home" className='hover:text-gray-500 text-lg '>Chatbot</a></li>
-                        <li><a href="/contact" className='hover:text-gray-500 text-lg'>Contact</a></li>
+                        <li><a href="/home" className='hover:text-gray-500 text-lg font-semibold'>Chatbot</a></li>
+                        <li><a href="/contact" className='hover:text-gray-500 text-lg font-semibold'>Contact</a></li>
                     </ul>
                 </div>
                 <div className='flex item-center gap-3'>
                     {
                         !user?<>
-                        <a href="/signup" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Sign Up</a>
-                        <a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Login</a>
-                        </>:<a href="/login" onClick={signOut} className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg '>Logout</a>
+                        <a href="/signup" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg text-white font-semibold'>Sign Up</a>
+                        <a href="/login" className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg text-white font-semibold'>Login</a>
+                        </>:<a href="/login" onClick={signOut} className='text-lg hover:underline px-1.5 py-1 bg-green-600 rounded-lg text-white font-semibold'>Logout</a>
                     }
                     {/* <button className='text-xs bg-[#a6c1ee] text-white px-2 py-1 rounded-full hover:bg-[#87acec]'>Sign in</button> */}
                     <div className='text-base cursor-pointer md:hidden py-0.5'>
