@@ -28,6 +28,8 @@ export const AuthProvider = ({children})=>{
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
+      localStorage.setItem("session",session)
+      localStorage.setItem("token",session.access_token)
       setUser(session?.user)
       setLoading(false)
   });

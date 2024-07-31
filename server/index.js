@@ -8,7 +8,9 @@ dotenv.config()
 
 const PORT = process.env.PORT
 app.use(express.json())
-app.use(cors())   
+app.use(cors({
+    credentials: true,
+}))   
 
 app.use('/',userRouter)
 

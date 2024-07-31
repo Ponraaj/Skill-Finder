@@ -6,7 +6,9 @@ import './App.css'
 import Home from './components/pages/Home';
 import { AuthProvider } from './lib/context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import axios from "axios";
 
+axios.defaults.baseURL ="http://localhost:6969"
 const App = () => {
   return (
     

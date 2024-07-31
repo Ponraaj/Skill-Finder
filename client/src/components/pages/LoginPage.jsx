@@ -4,6 +4,7 @@ import '../LoginPage.css';
 import { useState } from 'react';
 import supabase from '../../lib/helpers/supabase';
 
+
 const LoginPage = () => {
   const navigate = useNavigate()
 
