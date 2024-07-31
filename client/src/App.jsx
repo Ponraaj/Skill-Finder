@@ -6,6 +6,7 @@ import './App.css'
 import Home from './components/pages/Home';
 import { AuthProvider } from './lib/context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import ContactPage from './components/pages/ContactPage';
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
               <ProtectedRoute>
               <Home />
             </ProtectedRoute>} />
+
+            <Route path='/contact' element={<ContactPage/>}/>
 
           </Routes>
         </div>
