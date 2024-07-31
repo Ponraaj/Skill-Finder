@@ -11,7 +11,7 @@ This educational app which is  Skill-Finder provides a seamless learning experie
   
  AI-powered functionalities with Gemini API
  
- Responsive UI using Material UI and Tailwind CSS
+ Responsive UI using Tailwind CSS
  
  Educational content management
 
