@@ -20,13 +20,13 @@ export const AuthProvider = ({children})=>{
     const setData = async()=>{
       const {data:{session},error} = await supabase.auth.getSession();
       if(error) throw error
-
+      
       setSession(session)
       setUser(session?.user)
       setLoading(false)
     }
 
-    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setUser(session?.user)
       setLoading(false)
