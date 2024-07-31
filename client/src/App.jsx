@@ -7,6 +7,8 @@ import Home from './components/pages/Home';
 import { AuthProvider } from './lib/context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import axios from "axios";
+import ContactPage from './components/pages/ContactPage';
+import LandingPage from './components/pages/LandingPage';
 
 axios.defaults.baseURL ="http://localhost:6969"
 const App = () => {
@@ -17,13 +19,16 @@ const App = () => {
         <div className='App'>
           <Navebar />
           <Routes>
-            <Route path="/" element={<LoginPage/>} />
+            <Route path="/" element={<LandingPage/>} />
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/home" element={
               <ProtectedRoute>
               <Home />
             </ProtectedRoute>} />
+
+            <Route path='/contact' element={<ContactPage/>}/>
+            
 
           </Routes>
         </div>
