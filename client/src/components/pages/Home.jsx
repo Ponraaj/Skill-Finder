@@ -5,7 +5,7 @@ import {MainContainer,ChatContainer,MessageList,Message,MessageInput,TypingIndic
 import axios from 'axios';
 import { useAuth } from '../../lib/context/AuthContext';
 import supabase from '../../lib/helpers/supabase';
-
+import Markdown from "react-markdown"
 
 
 const Home = () => {
@@ -128,7 +128,17 @@ const Home = () => {
           <ChatContainer>
             <MessageList scrollBehavior='smooth' typingIndicator={typing ? <TypingIndicator content="Chatbot is typing" /> : null}>
               {messages.map((message,i)=>{
-                return <Message className='rounded-lg' key={i} model={message} />
+
+                
+                return  <Message className='rounded-lg' key={i} model={{
+                  direction: message.direction,
+                  sender: message.sender,
+                }}><Message.CustomContent>
+                      <Markdown>
+                        {message.message}
+                      </Markdown>
+                    </Message.CustomContent>
+                  </Message>
               })}
             </MessageList>
             <MessageInput placeholder='Type message here' onSend={(innerHtml)=>handleSend(innerHtml)} autoFocus/>
