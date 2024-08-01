@@ -12,7 +12,7 @@ import LandingPage from './components/pages/LandingPage';
 import PageNotFound from './components/pages/PageNotFound';
 import { ToastContainer } from 'react-toastify';
 
-axios.defaults.baseURL ="http://localhost:6969"
+axios.defaults.baseURL ="https://skill-finder-server.vercel.app/"
 const App = () => {
   return (
     
