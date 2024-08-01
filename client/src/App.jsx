@@ -9,6 +9,8 @@ import ProtectedRoute from './components/ProtectedRoute';
 import axios from "axios";
 import ContactPage from './components/pages/ContactPage';
 import LandingPage from './components/pages/LandingPage';
+import PageNotFound from './components/pages/PageNotFound';
+import { ToastContainer } from 'react-toastify';
 
 axios.defaults.baseURL ="http://localhost:6969"
 const App = () => {
@@ -17,6 +19,7 @@ const App = () => {
     <Router>
       <AuthProvider>
         <div className='App'>
+          <ToastContainer />
           <Navebar />
           <Routes>
             <Route path="/" element={<LandingPage/>} />
@@ -28,6 +31,7 @@ const App = () => {
             </ProtectedRoute>} />
 
             <Route path='/contact' element={<ContactPage/>}/>
+            <Route path="*" element={<PageNotFound />} />
             
 
           </Routes>
