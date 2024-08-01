@@ -69,7 +69,7 @@ body, html {
     border-radius: 5px;
   }
   
-  button {
+  .form-group button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -79,11 +79,11 @@ body, html {
     font-size: 16px;
   }
   
-  button:hover {
+  .form-group button:hover {
     background-color: #0056b3;
   }
   
-  button:active {
+  .form-group button:active {
     background-color: #004080;
   }
   

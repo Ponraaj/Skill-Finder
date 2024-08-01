@@ -8,6 +8,8 @@ import { AuthProvider } from './lib/context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import ContactPage from './components/pages/ContactPage';
 import LandingPage from './components/pages/LandingPage';
+import PageNotFound from './components/pages/PageNotFound';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
     <Router>
       <AuthProvider>
         <div className='App'>
+          <ToastContainer />
           <Navebar />
           <Routes>
             <Route path="/" element={<LandingPage/>} />
@@ -26,6 +29,7 @@ const App = () => {
             </ProtectedRoute>} />
 
             <Route path='/contact' element={<ContactPage/>}/>
+            <Route path="*" element={<PageNotFound />} />
             
 
           </Routes>

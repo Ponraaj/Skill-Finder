@@ -1,10 +1,39 @@
 import React, { useState } from 'react';
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import supabase from '../../lib/helpers/supabase';
+import { toast} from 'react-toastify';
 import { motion } from 'framer-motion';
 import '../SignupPage.css';
+import BeatLoader from "react-spinners/BeatLoader";
 
 const SignupPage = () => {
+
+  const [loading,setLoading] = useState(false);
+  const navigate=useNavigate();
+  
+  const errorNotify=(error)=>{
+    if (!error || !error.message) {
+      console.error('Invalid error object:', error);
+      return;
+    }
+
+    const message=error.message
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+    });}
+
+  const sucessNotify=()=>{
+    toast.info("Login to continue", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+  });}
   const [credentials,setCredentials] = useState({
     username:"",
     email:"",
@@ -14,6 +43,7 @@ const SignupPage = () => {
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
+    setLoading(true)
     try {
       const {data,error} = await supabase.auth.signUp(
         {
@@ -26,11 +56,14 @@ const SignupPage = () => {
           }
         }
       )
-      console.log(data)
-      alert("Check your email for verification Link!")
       if(error) throw error
+      sucessNotify()
+      navigate("/login")
     } catch (error) {
-      alert(error.message)
+      console.log(error.message)
+      errorNotify(error)
+    }finally{
+      setLoading(false)
     }
   }
 
@@ -46,6 +79,10 @@ const SignupPage = () => {
  
 
   return (
+    <>
+    {loading?(
+    <BeatLoader color={"#16a34a"} loading={loading} className='text-center pt-[400px]' />
+    ):(
     <div className="container">
     <div className="signup-container">
       <motion.div
@@ -96,6 +133,7 @@ const SignupPage = () => {
             />
           </div>
           <motion.button
+          className='w-full'
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             type="submit"
@@ -109,6 +147,8 @@ const SignupPage = () => {
       </motion.div>
     </div>
     </div>
+    )}
+    </>
   );
 };
 
