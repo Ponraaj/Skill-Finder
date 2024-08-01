@@ -1,9 +1,20 @@
 import {VertexAI} from '@google-cloud/vertexai'
+import { GoogleAuth } from "google-auth-library"
 
 async function generateContent(req,res) {
 
+  const gAuth = new GoogleAuth({
+    credentials: {
+      client_email: process.env.CLIENT_EMAIL,
+      private_key: process.env.PRIVATE_KEY,
+    },
+  });
+  
+  const authClient = await gAuth.getClient();
+  
+
 // Initialize Vertex with your Cloud project and location
-const vertex_ai = new VertexAI({project: process.env.PROJECT_ID, location: process.env.LOCATION});
+const vertex_ai = new VertexAI({googleAuth:authClient ,project: process.env.PROJECT_ID, location: process.env.LOCATION});
 const model = process.env.MODEL;
 
 // Instantiate the models
